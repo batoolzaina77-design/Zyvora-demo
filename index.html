@@ -1,13 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Zyvora</title>
+<title>Zyvora</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 40px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.section {
+  background: white;
+  color: black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+button {
+  background: #ff4b2b;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff416c;
+  transform: scale(1.1);
+}
+
+img {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>🚀 Zyvora Website LIVE</h1>
-<p>Congratulations! Your website is working 😎</p>
+<header>
+  <h1>🚀 Zyvora</h1>
+  <h2>Building Future Tech Empire 💻🔥</h2>
+</header>
+
+<div class="section">
+  <h3>👋 About Me</h3>
+  <p>I am learning coding and building my tech company step by step.</p>
+</div>
+
+<div class="section">
+  <h3>🎯 My Goal</h3>
+  <p>I will build a successful tech company and never give up.</p>
+</div>
+
+<div class="section">
+  <h3>🌐 My First Website</h3>
+  <img src="https://via.placeholder.com/200">
+  <br><br>
+  <button onclick="showMessage()">Click Me 😎</button>
+</div>
+
+<script>
+function showMessage() {
+  alert("Zyvora is going to be a big company 🚀🔥");
+}
+</script>
 
 </body>
 </html>
