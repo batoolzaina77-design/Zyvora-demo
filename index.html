@@ -41,3 +41,134 @@ header p {
 /* Hero */
 .hero {
     text-align: center;
+    padding: 80px 15px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 35px;
+}
+
+.hero p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* Button */
+.btn {
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #0ea5e9;
+}
+
+/* Services */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Zynarox</h1>
+    <p>Premium Digital Agency</p>
+</header>
+
+<section class="hero">
+    <h2>We Build Premium Websites</h2>
+    <p>Modern, fast and powerful digital solutions</p>
+    <button class="btn">Get Started</button>
+</section>
+
+<section class="services">
+    
+    <div class="card glass">
+        <h3>Web Design</h3>
+        <p>Clean and modern UI</p>
+    </div>
+
+    <div class="card glass">
+        <h3>Development</h3>
+        <p>Fast & responsive</p>
+    </div>
+
+    <div class="card glass">
+        <h3>SEO</h3>
+        <p>Rank higher on Google</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Zynarox. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
