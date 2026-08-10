@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Zunaira's Magical Birthday ✨</title>
 
+
 <style>
 
-/* =========================
+/* ================================
    BASIC SETTINGS
-========================= */
+================================ */
 
 * {
     margin: 0;
@@ -18,65 +23,108 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
     font-family: Georgia, serif;
+
     overflow: hidden;
+
     color: white;
+
     background: #12051f;
 }
 
 
-/* =========================
-   PAGES
-========================= */
+/* ================================
+   PAGE SYSTEM
+================================ */
 
 .page {
+
     position: absolute;
+
     inset: 0;
 
     display: none;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
-    padding: 25px;
+    padding: 20px;
 
     overflow: hidden;
 }
 
+
 .page.active {
+
     display: flex;
 
-    animation: pageIn 1s ease;
+    animation:
+        pageIn
+        1s
+        ease;
 }
+
 
 @keyframes pageIn {
 
     from {
+
         opacity: 0;
-        transform: scale(1.05);
+
+        transform:
+            scale(1.08);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
 
 .content {
+
     width: min(900px, 95%);
 
     position: relative;
 
     z-index: 10;
+
+    max-height: 95vh;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
 }
 
 
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ================================
+   TEXT
+================================ */
+
 h1 {
-    font-size: clamp(42px, 9vw, 85px);
+
+    font-size:
+        clamp(42px, 9vw, 85px);
 
     margin-bottom: 20px;
 
@@ -87,24 +135,29 @@ h1 {
 
 
 h2 {
-    font-size: clamp(30px, 6vw, 60px);
+
+    font-size:
+        clamp(30px, 6vw, 60px);
 
     margin-bottom: 20px;
 }
 
 
 p {
-    font-size: clamp(18px, 3vw, 25px);
 
-    line-height: 1.7;
+    font-size:
+        clamp(17px, 3vw, 24px);
+
+    line-height: 1.6;
 }
 
 
 button {
 
-    margin-top: 30px;
+    margin-top: 28px;
 
-    padding: 15px 30px;
+    padding:
+        15px 30px;
 
     border: none;
 
@@ -121,7 +174,8 @@ button {
     cursor: pointer;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.4);
+        0 8px 25px
+        rgba(0,0,0,.4);
 
     transition: .3s;
 }
@@ -135,9 +189,9 @@ button:hover {
 }
 
 
-/* =========================
+/* ================================
    PAGE 1
-========================= */
+================================ */
 
 #page1 {
 
@@ -162,21 +216,12 @@ button:hover {
 
     font-size: 80px;
 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
-    animation: floating 3s infinite;
-}
-
-
-@keyframes floating {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+    animation:
+        floating
+        3s
+        infinite;
 }
 
 
@@ -186,18 +231,18 @@ button:hover {
 }
 
 
-/* =========================
-   PAGE 2
-========================= */
+/* ================================
+   PAGE 2 — CINDERELLA
+================================ */
 
 #page2 {
 
     background:
 
         radial-gradient(
-            circle at 50% 25%,
+            circle at 50% 20%,
             #7fcfff,
-            transparent 38%
+            transparent 40%
         ),
 
         linear-gradient(
@@ -207,66 +252,27 @@ button:hover {
 }
 
 
-/* =========================
-   COMBINED PRINCESS IMAGE
-========================= */
-
-.princesses {
-
-    width: 380px;
-
-    max-width: 80%;
-
-    display: block;
-
-    margin: 0 auto 20px;
-
-    filter:
-
-        drop-shadow(
-            0 15px 25px
-            rgba(0,0,0,.5)
-        );
-
-    animation:
-        princessFloat
-        3s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes princessFloat {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-
 .blue {
 
     color: #c8edff;
 
+    text-shadow:
+        0 0 15px #8edcff;
 }
 
 
-/* =========================
-   PAGE 3
-========================= */
+/* ================================
+   PAGE 3 — RAPUNZEL
+================================ */
 
 #page3 {
 
     background:
 
         radial-gradient(
-            circle at 50% 25%,
+            circle at 50% 20%,
             #a850d8,
-            transparent 38%
+            transparent 40%
         ),
 
         linear-gradient(
@@ -280,12 +286,66 @@ button:hover {
 
     color: #f0c9ff;
 
+    text-shadow:
+        0 0 15px #e4a5ff;
 }
 
 
-/* =========================
-   PAGE 4
-========================= */
+/* ================================
+   PRINCESS IMAGES
+================================ */
+
+.princess {
+
+    width: 330px;
+
+    max-width: 75vw;
+
+    max-height: 45vh;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin:
+        0 auto 20px;
+
+    border-radius: 20px;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,.55)
+        );
+
+    animation:
+        princessFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes princessFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+/* ================================
+   PAGE 4 — BIRTHDAY
+================================ */
 
 #page4 {
 
@@ -308,8 +368,6 @@ button:hover {
 .cake {
 
     font-size: 90px;
-
-    margin-bottom: 10px;
 
     animation:
         floating
@@ -346,19 +404,16 @@ button:hover {
     to {
 
         text-shadow:
-
             0 0 15px white,
-
             0 0 35px #ff73b7,
-
             0 0 60px #ff73b7;
     }
 }
 
 
-/* =========================
-   PAGE 5
-========================= */
+/* ================================
+   PAGE 5 — FINAL MESSAGE
+================================ */
 
 #page5 {
 
@@ -411,9 +466,9 @@ button:hover {
 }
 
 
-/* =========================
-   STARS
-========================= */
+/* ================================
+   FLOATING STARS
+================================ */
 
 .star {
 
@@ -421,7 +476,9 @@ button:hover {
 
     color: white;
 
-    z-index: 1;
+    z-index: 2;
+
+    pointer-events: none;
 
     animation:
         twinkle
@@ -434,20 +491,26 @@ button:hover {
 @keyframes twinkle {
 
     from {
+
         opacity: .2;
-        transform: scale(.7);
+
+        transform:
+            scale(.7);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1.2);
+
+        transform:
+            scale(1.2);
     }
 }
 
 
-/* =========================
+/* ================================
    CONFETTI
-========================= */
+================================ */
 
 .confetti {
 
@@ -482,23 +545,28 @@ button:hover {
 }
 
 
-/* =========================
+/* ================================
    MOBILE
-========================= */
+================================ */
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
 
-    .princesses {
+    .princess {
 
-        width: 300px;
+        width: 280px;
 
-        max-width: 85%;
+        max-width: 80vw;
+
+        max-height: 38vh;
     }
+
 
     .message-box {
 
-        padding: 25px 18px;
+        padding:
+            25px 18px;
     }
+
 
     button {
 
@@ -507,18 +575,25 @@ button:hover {
         padding:
             13px 24px;
     }
+
+
+    .cake {
+
+        font-size: 70px;
+    }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =================================
-     PAGE 1
-================================= -->
+<!-- =====================================
+     PAGE 1 — WELCOME
+===================================== -->
 
 <section
     class="page active"
@@ -530,9 +605,11 @@ button:hover {
             ✨
         </div>
 
+
         <h1>
             Once Upon A Time...
         </h1>
+
 
         <p class="subtitle">
 
@@ -541,6 +618,7 @@ button:hover {
             very special... 💜
 
         </p>
+
 
         <button
             onclick="nextPage()">
@@ -555,9 +633,9 @@ button:hover {
 
 
 
-<!-- =================================
+<!-- =====================================
      PAGE 2 — CINDERELLA
-================================= -->
+===================================== -->
 
 <section
     class="page"
@@ -566,23 +644,17 @@ button:hover {
     <div class="content">
 
 
-        <!--
-        IMPORTANT:
-
-        Put your combined Cinderella +
-        Rapunzel image inside an "images"
-        folder.
-
-        File name:
-        princesses.png
-        -->
+        <!-- CINDERELLA IMAGE -->
 
         <img
-            src="images/princesses.png"
-            class="princesses"
-            alt="Cinderella and Rapunzel inspired princesses">
 
+            src="067d4c201e143e58fc25bb5167c3cbcd.jpg"
 
+            class="princess"
+
+            alt="Cinderella">
+
+        
         <h2 class="blue">
 
             👑 Cinderella's Message
@@ -598,7 +670,7 @@ button:hover {
 
             Today is not an ordinary day...
 
-            <br>
+            <br><br>
 
             It's the day a very special
             person came into this world. ✨
@@ -626,9 +698,9 @@ button:hover {
 
 
 
-<!-- =================================
+<!-- =====================================
      PAGE 3 — RAPUNZEL
-================================= -->
+===================================== -->
 
 <section
     class="page"
@@ -637,10 +709,15 @@ button:hover {
     <div class="content">
 
 
+        <!-- RAPUNZEL IMAGE -->
+
         <img
-            src="images/princesses.png"
-            class="princesses"
-            alt="Cinderella and Rapunzel inspired princesses">
+
+            src="127dc49fb19af26861c1a9e2c5aabbe5.jpg"
+
+            class="princess"
+
+            alt="Rapunzel">
 
 
         <h2 class="purple">
@@ -686,9 +763,9 @@ button:hover {
 
 
 
-<!-- =================================
+<!-- =====================================
      PAGE 4 — BIRTHDAY
-================================= -->
+===================================== -->
 
 <section
     class="page"
@@ -718,7 +795,7 @@ button:hover {
 
         <div class="birthday-name">
 
-            ZUNAiRA
+            ZUNAIRA
 
         </div>
 
@@ -751,9 +828,9 @@ button:hover {
 
 
 
-<!-- =================================
+<!-- =====================================
      PAGE 5 — FINAL MESSAGE
-================================= -->
+===================================== -->
 
 <section
     class="page"
@@ -840,16 +917,14 @@ button:hover {
 
 <script>
 
-
-/* =========================
+/* =====================================
    PAGE SYSTEM
-========================= */
+===================================== */
 
 let currentPage = 1;
 
 
 function nextPage() {
-
 
     document
         .getElementById(
@@ -876,12 +951,11 @@ function nextPage() {
 
 
 
-/* =========================
+/* =====================================
    STARS
-========================= */
+===================================== */
 
 function createStars() {
-
 
     document
         .querySelectorAll(".star")
@@ -895,7 +969,6 @@ function createStars() {
         i < 40;
         i++
     ) {
-
 
         const star =
             document.createElement("div");
@@ -938,12 +1011,11 @@ function createStars() {
 
 
 
-/* =========================
-   BIRTHDAY CONFETTI
-========================= */
+/* =====================================
+   CONFETTI
+===================================== */
 
 function celebrate() {
-
 
     nextPage();
 
@@ -953,7 +1025,6 @@ function celebrate() {
         i < 150;
         i++
     ) {
-
 
         const confetti =
             document.createElement("div");
@@ -1000,13 +1071,15 @@ function celebrate() {
 
 
 
-/* START */
+/* =====================================
+   START
+===================================== */
 
 createStars();
-
 
 </script>
 
 
 </body>
+
 </html>
