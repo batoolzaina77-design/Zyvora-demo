@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Magical Birthday Story ✨</title>
+
+<title>Zunaira's Magical Birthday ✨</title>
 
 <style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,284 +21,603 @@
 body {
     font-family: Georgia, serif;
     overflow: hidden;
-    background: #08051a;
     color: white;
+    background: #12051f;
 }
+
+
+/* =========================
+   PAGES
+========================= */
 
 .page {
     position: absolute;
     inset: 0;
+
     display: none;
+
     justify-content: center;
     align-items: center;
+
     text-align: center;
+
     padding: 25px;
+
     overflow: hidden;
 }
 
 .page.active {
     display: flex;
-    animation: fadeIn 1s ease;
+
+    animation: pageIn 1s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(1.04); }
-    to { opacity: 1; transform: scale(1); }
-}
+@keyframes pageIn {
 
-/* ---------- COMMON ---------- */
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
 
-.content {
-    width: min(900px, 95%);
-    z-index: 5;
-}
-
-h1 {
-    font-size: clamp(42px, 8vw, 85px);
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px rgba(255,255,255,.5);
-}
-
-h2 {
-    font-size: clamp(30px, 6vw, 60px);
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: clamp(18px, 3vw, 25px);
-    line-height: 1.7;
-}
-
-button {
-    margin-top: 30px;
-    border: none;
-    padding: 15px 28px;
-    border-radius: 50px;
-    font-size: 18px;
-    cursor: pointer;
-    background: white;
-    color: #5b267c;
-    font-weight: bold;
-    box-shadow: 0 8px 25px rgba(0,0,0,.3);
-    transition: .3s;
-}
-
-button:hover {
-    transform: translateY(-4px) scale(1.04);
-}
-
-/* ---------- PAGE 1 ---------- */
-
-#page1 {
-    background:
-        radial-gradient(circle at 50% 20%, #51408c, transparent 40%),
-        linear-gradient(135deg, #09051c, #21124d, #09051c);
-}
-
-.magic {
-    font-size: 70px;
-    animation: float 3s infinite ease-in-out;
-}
-
-@keyframes float {
-    50% { transform: translateY(-15px); }
-}
-
-.subtitle {
-    color: #f5d8ff;
-}
-
-/* ---------- CINDERELLA ---------- */
-
-#page2 {
-    background:
-        radial-gradient(circle at 50% 30%, #91d7ff, transparent 35%),
-        linear-gradient(180deg, #142c65, #080d2d);
-}
-
-.cinderella {
-    font-size: 130px;
-    margin-bottom: 15px;
-    animation: princessFloat 3s infinite ease-in-out;
-}
-
-@keyframes princessFloat {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-.blue {
-    color: #bceaff;
-}
-
-/* ---------- RAPUNZEL ---------- */
-
-#page3 {
-    background:
-        radial-gradient(circle at 50% 25%, #c46cff, transparent 35%),
-        linear-gradient(180deg, #35105b, #12051e);
-}
-
-.rapunzel {
-    font-size: 130px;
-    margin-bottom: 15px;
-    animation: princessFloat 3s infinite ease-in-out;
-}
-
-.purple {
-    color: #f1c6ff;
-}
-
-/* ---------- BIRTHDAY ---------- */
-
-#page4 {
-    background:
-        radial-gradient(circle, #ff78b7, transparent 35%),
-        linear-gradient(135deg, #3c0b42, #13051e);
-}
-
-.birthday-name {
-    font-size: clamp(45px, 10vw, 100px);
-    color: #ffd6ec;
-    animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px #fff; }
     to {
-        text-shadow:
-        0 0 15px #fff,
-        0 0 35px #ff78b7,
-        0 0 60px #ff78b7;
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-.cake {
-    font-size: 90px;
-    margin: 15px;
+
+.content {
+    width: min(900px, 95%);
+
+    position: relative;
+
+    z-index: 10;
 }
 
-/* ---------- FINAL ---------- */
+
+h1 {
+    font-size: clamp(42px, 9vw, 85px);
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 35px #c77dff;
+}
+
+
+h2 {
+    font-size: clamp(30px, 6vw, 60px);
+
+    margin-bottom: 20px;
+}
+
+
+p {
+    font-size: clamp(18px, 3vw, 25px);
+
+    line-height: 1.7;
+}
+
+
+button {
+
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #602080;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.4);
+
+    transition: .3s;
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+#page1 {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            #6846a5,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #09031a,
+            #26104c,
+            #09031a
+        );
+}
+
+
+.magic {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+    animation: floating 3s infinite;
+}
+
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+.subtitle {
+
+    color: #f5d9ff;
+}
+
+
+/* =========================
+   PAGE 2
+========================= */
+
+#page2 {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 25%,
+            #7fcfff,
+            transparent 38%
+        ),
+
+        linear-gradient(
+            #18386d,
+            #07142f
+        );
+}
+
+
+/* =========================
+   COMBINED PRINCESS IMAGE
+========================= */
+
+.princesses {
+
+    width: 380px;
+
+    max-width: 80%;
+
+    display: block;
+
+    margin: 0 auto 20px;
+
+    filter:
+
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,.5)
+        );
+
+    animation:
+        princessFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes princessFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+.blue {
+
+    color: #c8edff;
+
+}
+
+
+/* =========================
+   PAGE 3
+========================= */
+
+#page3 {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 25%,
+            #a850d8,
+            transparent 38%
+        ),
+
+        linear-gradient(
+            #3a1258,
+            #12051e
+        );
+}
+
+
+.purple {
+
+    color: #f0c9ff;
+
+}
+
+
+/* =========================
+   PAGE 4
+========================= */
+
+#page4 {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            #ff75b7,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #430b45,
+            #16051e
+        );
+}
+
+
+.cake {
+
+    font-size: 90px;
+
+    margin-bottom: 10px;
+
+    animation:
+        floating
+        3s
+        infinite;
+}
+
+
+.birthday-name {
+
+    font-size:
+        clamp(45px, 11vw, 100px);
+
+    color: #ffd5eb;
+
+    font-weight: bold;
+
+    animation:
+        glow
+        1.5s
+        infinite
+        alternate;
+}
+
+
+@keyframes glow {
+
+    from {
+
+        text-shadow:
+            0 0 10px white;
+    }
+
+    to {
+
+        text-shadow:
+
+            0 0 15px white,
+
+            0 0 35px #ff73b7,
+
+            0 0 60px #ff73b7;
+    }
+}
+
+
+/* =========================
+   PAGE 5
+========================= */
 
 #page5 {
+
     background:
-        radial-gradient(circle at 50% 20%, #7540b8, transparent 35%),
-        linear-gradient(135deg, #110522, #32104d, #090316);
+
+        radial-gradient(
+            circle at 50% 20%,
+            #8144b8,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #10041f,
+            #35114e,
+            #080212
+        );
 }
 
-.final-message {
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.25);
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
+
+.message-box {
+
     padding: 35px;
-    box-shadow: 0 0 40px rgba(200,100,255,.2);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 0 40px
+        rgba(200,100,255,.2);
 }
+
 
 .signature {
+
     margin-top: 25px;
-    color: #e4b6ff;
-    font-size: 24px;
+
+    font-size: 25px;
+
+    color: #e8baff;
 }
 
-/* ---------- STARS ---------- */
+
+/* =========================
+   STARS
+========================= */
 
 .star {
-    position: absolute;
+
+    position: fixed;
+
     color: white;
-    animation: twinkle 2s infinite alternate;
+
+    z-index: 1;
+
+    animation:
+        twinkle
+        2s
+        infinite
+        alternate;
 }
+
 
 @keyframes twinkle {
-    from { opacity: .2; transform: scale(.7); }
-    to { opacity: 1; transform: scale(1.2); }
+
+    from {
+        opacity: .2;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
 
-/* ---------- CONFETTI ---------- */
+
+/* =========================
+   CONFETTI
+========================= */
 
 .confetti {
+
     position: fixed;
+
     top: -20px;
+
     width: 10px;
+
     height: 16px;
-    z-index: 20;
-    animation: fall 4s linear forwards;
+
+    z-index: 100;
+
+    animation:
+        fall
+        4s
+        linear
+        forwards;
 }
 
+
 @keyframes fall {
+
     to {
-        transform: translateY(110vh) rotate(720deg);
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
         opacity: 0;
     }
 }
 
-/* ---------- MOBILE ---------- */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px) {
-    .cinderella,
-    .rapunzel {
-        font-size: 95px;
+
+    .princesses {
+
+        width: 300px;
+
+        max-width: 85%;
     }
 
-    .final-message {
+    .message-box {
+
         padding: 25px 18px;
     }
 
     button {
+
         font-size: 16px;
-        padding: 13px 23px;
+
+        padding:
+            13px 24px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- PAGE 1 -->
-<section class="page active" id="page1">
+
+<!-- =================================
+     PAGE 1
+================================= -->
+
+<section
+    class="page active"
+    id="page1">
 
     <div class="content">
-        <div class="magic">✨</div>
 
-        <h1>Once Upon A Time...</h1>
+        <div class="magic">
+            ✨
+        </div>
+
+        <h1>
+            Once Upon A Time...
+        </h1>
 
         <p class="subtitle">
-            A magical birthday story was waiting<br>
-            for someone very special...
+
+            A magical birthday story
+            was waiting for someone
+            very special... 💜
+
         </p>
 
-        <button onclick="nextPage()">
+        <button
+            onclick="nextPage()">
+
             Open The Story ✨
+
         </button>
+
     </div>
 
 </section>
 
 
-<!-- PAGE 2 -->
-<section class="page" id="page2">
+
+<!-- =================================
+     PAGE 2 — CINDERELLA
+================================= -->
+
+<section
+    class="page"
+    id="page2">
 
     <div class="content">
 
-        <div class="cinderella">👸🏻</div>
 
-        <h2 class="blue">Cinderella's Magical Letter</h2>
+        <!--
+        IMPORTANT:
+
+        Put your combined Cinderella +
+        Rapunzel image inside an "images"
+        folder.
+
+        File name:
+        princesses.png
+        -->
+
+        <img
+            src="images/princesses.png"
+            class="princesses"
+            alt="Cinderella and Rapunzel inspired princesses">
+
+
+        <h2 class="blue">
+
+            👑 Cinderella's Message
+
+        </h2>
+
 
         <p>
-            Dear <b>Zunaira</b> 💙,<br><br>
 
-            Tonight is not an ordinary night...
-            because someone incredibly special is celebrating
-            another beautiful year of life. ✨
+            Dear <b>Zunaira</b> 💙,
+
+            <br><br>
+
+            Today is not an ordinary day...
+
+            <br>
+
+            It's the day a very special
+            person came into this world. ✨
+
+            <br><br>
+
+            May your life always be filled
+            with happiness, laughter,
+            beautiful memories and
+            a little bit of magic. 🦋
+
         </p>
 
-        <p style="margin-top:15px;">
-            May your life always be filled with
-            happiness, laughter and magical moments. 🦋
-        </p>
 
-        <button onclick="nextPage()">
+        <button
+            onclick="nextPage()">
+
             Continue The Magic ✨
+
         </button>
 
     </div>
@@ -300,31 +625,59 @@ button:hover {
 </section>
 
 
-<!-- PAGE 3 -->
-<section class="page" id="page3">
+
+<!-- =================================
+     PAGE 3 — RAPUNZEL
+================================= -->
+
+<section
+    class="page"
+    id="page3">
 
     <div class="content">
 
-        <div class="rapunzel">👸🏼</div>
 
-        <h2 class="purple">Rapunzel's Message</h2>
+        <img
+            src="images/princesses.png"
+            class="princesses"
+            alt="Cinderella and Rapunzel inspired princesses">
+
+
+        <h2 class="purple">
+
+            🌸 Rapunzel's Message
+
+        </h2>
+
 
         <p>
+
             Hey <b>Zaina</b> 💜,
+
+            <br><br>
+
+            Every beautiful story needs
+            someone behind the magic...
+
+            <br><br>
+
+            And this little birthday
+            fairytale was created
+            especially for Zunaira. 🌸✨
+
+            <br><br>
+
+            Because some friendships
+            deserve their own fairytale. 💕
+
         </p>
 
-        <p style="margin-top:15px;">
-            Every beautiful story needs someone
-            behind the magic...
-        </p>
 
-        <p style="margin-top:15px;">
-            And this little birthday fairytale
-            was created with love by you. 🌸✨
-        </p>
+        <button
+            onclick="nextPage()">
 
-        <button onclick="nextPage()">
             There's More... 💫
+
         </button>
 
     </div>
@@ -332,29 +685,64 @@ button:hover {
 </section>
 
 
-<!-- PAGE 4 -->
-<section class="page" id="page4">
+
+<!-- =================================
+     PAGE 4 — BIRTHDAY
+================================= -->
+
+<section
+    class="page"
+    id="page4">
 
     <div class="content">
 
-        <div class="cake">🎂</div>
 
-        <p>Today the kingdom celebrates...</p>
+        <div class="cake">
+
+            🎂
+
+        </div>
+
+
+        <p>
+
+            And now...
+
+            <br>
+
+            the entire magical kingdom
+            is celebrating...
+
+        </p>
+
 
         <div class="birthday-name">
+
             ZUNAiRA
+
         </div>
 
-        <h2>🎉 HAPPY BIRTHDAY! 🎉</h2>
+
+        <h2>
+
+            🎉 HAPPY BIRTHDAY! 🎉
+
+        </h2>
+
 
         <p>
-            May this new chapter of your life
-            be full of beautiful memories,
-            happiness and dreams coming true. 💖
+
+            May all your beautiful dreams
+            come true. ✨
+
         </p>
 
-        <button onclick="celebrate()">
+
+        <button
+            onclick="celebrate()">
+
             One Last Surprise 🎁
+
         </button>
 
     </div>
@@ -362,123 +750,263 @@ button:hover {
 </section>
 
 
-<!-- PAGE 5 -->
-<section class="page" id="page5">
+
+<!-- =================================
+     PAGE 5 — FINAL MESSAGE
+================================= -->
+
+<section
+    class="page"
+    id="page5">
 
     <div class="content">
 
-        <div class="final-message">
 
-            <div style="font-size:60px;">🌙✨👑</div>
+        <div class="message-box">
 
-            <h2>A Little Message For You 💌</h2>
 
-            <p>
-                Zunaira, I hope this birthday brings you
-                countless reasons to smile.
-                <br><br>
+            <div
+                style="
+                font-size:60px;
+                margin-bottom:15px;
+                ">
 
-                Never forget how many beautiful moments
-                are still waiting for you in the future. 🌸
-                <br><br>
+                🌙✨👑
 
-                Keep smiling, keep dreaming,
-                and keep being the wonderful person you are. 💜
-            </p>
-
-            <div class="signature">
-                With love,<br>
-                <b>Zaina 💕</b>
             </div>
 
-            <button onclick="location.reload()">
+
+            <h2>
+
+                A Little Message
+                For You 💌
+
+            </h2>
+
+
+            <p>
+
+                Zunaira,
+
+                <br><br>
+
+                I hope your birthday is
+                filled with countless
+                reasons to smile.
+
+                <br><br>
+
+                May this new chapter of
+                your life bring you
+                happiness, success,
+                beautiful memories and
+                lots of magical moments. 🌸
+
+                <br><br>
+
+                Keep smiling,
+                keep dreaming,
+                and always stay amazing. 💜
+
+            </p>
+
+
+            <div class="signature">
+
+                With love,
+
+                <br>
+
+                <b>Zaina 💕</b>
+
+            </div>
+
+
+            <button
+                onclick="location.reload()">
+
                 Read Again ✨
+
             </button>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <script>
 
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
 let currentPage = 1;
+
 
 function nextPage() {
 
+
     document
-        .getElementById("page" + currentPage)
-        .classList.remove("active");
+        .getElementById(
+            "page" + currentPage
+        )
+        .classList
+        .remove("active");
+
 
     currentPage++;
 
+
     document
-        .getElementById("page" + currentPage)
-        .classList.add("active");
+        .getElementById(
+            "page" + currentPage
+        )
+        .classList
+        .add("active");
+
 
     createStars();
+
 }
+
+
+
+/* =========================
+   STARS
+========================= */
 
 function createStars() {
 
-    // Remove old stars
-    document.querySelectorAll(".star").forEach(star => star.remove());
 
-    for(let i = 0; i < 35; i++) {
+    document
+        .querySelectorAll(".star")
+        .forEach(
+            star => star.remove()
+        );
 
-        const star = document.createElement("div");
 
-        star.className = "star";
-        star.innerHTML = Math.random() > .5 ? "✦" : "·";
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
 
-        star.style.left = Math.random() * 100 + "%";
-        star.style.top = Math.random() * 100 + "%";
+
+        const star =
+            document.createElement("div");
+
+
+        star.className =
+            "star";
+
+
+        star.innerHTML =
+            Math.random() > .5
+            ? "✦"
+            : "·";
+
+
+        star.style.left =
+            Math.random() * 100 + "%";
+
+
+        star.style.top =
+            Math.random() * 100 + "%";
+
 
         star.style.fontSize =
-            (Math.random() * 12 + 8) + "px";
+            (
+                Math.random() * 12 + 8
+            ) + "px";
+
 
         star.style.animationDelay =
             Math.random() * 2 + "s";
 
-        document.body.appendChild(star);
+
+        document.body
+            .appendChild(star);
+
     }
+
 }
+
+
+
+/* =========================
+   BIRTHDAY CONFETTI
+========================= */
 
 function celebrate() {
 
+
     nextPage();
 
-    for(let i = 0; i < 120; i++) {
 
-        const confetti = document.createElement("div");
+    for (
+        let i = 0;
+        i < 150;
+        i++
+    ) {
 
-        confetti.className = "confetti";
+
+        const confetti =
+            document.createElement("div");
+
+
+        confetti.className =
+            "confetti";
+
 
         confetti.style.left =
             Math.random() * 100 + "vw";
 
+
         confetti.style.background =
-            `hsl(${Math.random() * 360}, 80%, 70%)`;
+            `hsl(
+                ${Math.random() * 360},
+                80%,
+                70%
+            )`;
+
 
         confetti.style.animationDuration =
-            (Math.random() * 2 + 3) + "s";
+            (
+                Math.random() * 2 + 3
+            ) + "s";
+
 
         confetti.style.animationDelay =
             Math.random() * 1.5 + "s";
 
-        document.body.appendChild(confetti);
 
-        setTimeout(() => {
-            confetti.remove();
-        }, 6000);
+        document.body
+            .appendChild(confetti);
+
+
+        setTimeout(
+            () => confetti.remove(),
+            6000
+        );
+
     }
+
 }
+
+
+
+/* START */
 
 createStars();
 
+
 </script>
+
 
 </body>
 </html>
